@@ -1,13 +1,7 @@
 FROM alpine:3.14
 
 # Add latest yt-dlp
-RUN apk add yt-dlp curl
+RUN apk add --no-cache curl ca-certificates ffmpeg python3 && \
+    curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/bin/yt-dlp && \
+	chmod +x /usr/bin/yt-dlp
 
-# Install UV
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-RUN uv python install # Install latest python
-
-# Install fastapi
-RUN uv pip install --system "fastapi[standard] yt-dlp[default]"
-
-ENTRYPOINT ["python3", "main.py"]
