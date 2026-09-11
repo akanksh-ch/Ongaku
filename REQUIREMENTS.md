@@ -23,3 +23,4 @@ We can also look at featured artists on songs that the user listens to, almost l
 
 - Option to download an Artist's discography, based on year or specific albums to populate the song store data.
 
+Gemini says Skrillex's entire discography might take 1.2 Gb.
